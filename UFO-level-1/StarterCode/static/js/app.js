@@ -38,12 +38,12 @@ function filterData(){
 
     d3.event.preventDefault();
 
-    var dateValue = inputDate.property("value")
-    var stateValue = inputState.property("value")
-    var countryValue = inputCountry.property("value")
-    var shapeValue = inputShape.property("value")
+    var dateV = inputDate.property("value")
+    var stateV = inputState.property("value")
+    var countryV = inputCountry.property("value")
+    var shapeV = inputShape.property("value")
 
-    var filteredData = tableData.filter(fData => (fData.datetime == dateValue) && (fData.state == stateValue))
+    var filteredData = tableData.filter(fData => (fData.datetime == dateV) && (fData.state == stateV))
     }
 console.log(filteredData)
   
