@@ -9,14 +9,14 @@ var columns = ["datetime","city","state","country","shape","durationMinutes","co
 
 
 function initialData(){
-    tableData.forEach(aliens =>{
+    tableData.forEach(sightings =>{
     var row = tableBody.append("tr")
     columns.forEach(column => {
-        if(column =="city" || column =="state" ||column == "country"){
-            row.append("td").text(aliens[column].toUpperCase())
-            }
-            else 
-            row.append("td").text(aliens[column])    
+    if(column =="city" || column =="state" ||column == "country"){
+        row.append("td").text(sightings[column].toUpperCase())
+        }
+    else 
+        row.append("td").text(sightings[column])    
         })
     })
 }
@@ -45,17 +45,18 @@ function filterData(){
 
     var filteredData = tableData.filter(fData => (fData.datetime == dateValue) && (fData.state == stateValue))
     }
-    console.log(filteredData)
-    // Empty the table to append with the filtered data 
-    tableBody.text("")
-    // update the table with the filtered data     
-    filteredData.forEach(aliens =>{
-        var row = tableBody.append("tr")
-        columns.forEach(column => {
-            if(column =="city" || column =="state" ||column == "country"){
-                row.append("td").text(aliens[column].toUpperCase())
-              }
-              else row.append("td").text(aliens[column])    
+console.log(filteredData)
+  
+tableBody.text("")
+       
+filteredData.forEach(sightings =>{
+    var row = tableBody.append("tr")
+    columns.forEach(column => {
+        if(column =="city" || column =="state" ||column == "country"){
+            row.append("td").text(sightings[column].toUpperCase())
+        }
+        else 
+            row.append("td").text(sightings[column])    
         })
     })
 
